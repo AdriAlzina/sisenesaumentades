@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- === SEO TAGS === -->
+    <title>Les Sisenes Aumentades – Italiana, Francesa, Alemanya, Suïssa, Wagneriana</title>
+    <meta name="description" content="Aprèn tot sobre les sisenes augmentades: Italiana, Francesa, Alemanya, Suïssa i Wagneriana. Àudios, diagrames d'entrellat harmònic i qüestionari interactiu de teoria musical.">
+    <meta name="keywords" content="sisena augmentada, sisena italiana, sisena francesa, sisena alemanya, sisena suïssa, sisena wagneriana, harmonia, acord alterat, teoria musical, música clàssica">
+    <meta name="author" content="La Sexta Aumentada">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="ca">
+    <link rel="canonical" href="https://www.lasextaaumentada.com/Imagenes/Les%20Sisenes%20Aumentades.html">
+
+    <!-- === OPEN GRAPH === -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Les Sisenes Aumentades – Teoria Musical Interactiva">
+    <meta property="og:description" content="Explora les 5 sisenes augmentades amb àudios, diagrames d'entrellat i qüestionari. Italiana, Francesa, Alemanya, Suïssa i Wagneriana.">
+    <meta property="og:url" content="https://www.lasextaaumentada.com/Imagenes/Les%20Sisenes%20Aumentades.html">
+    <meta property="og:image" content="https://www.lasextaaumentada.com/Imagenes/interval-sisena-aumentada.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:site_name" content="La Sexta Aumentada">
+
+    <!-- === TWITTER CARDS === -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Les Sisenes Aumentades – Teoria Musical">
+    <meta name="twitter:description" content="Explora les 5 sisenes augmentades amb àudios i diagrames.">
+    <meta name="twitter:image" content="https://www.lasextaaumentada.com/Imagenes/interval-sisena-aumentada.jpg">
+
+    <!-- === SCHEMA.ORG STRUCTURED DATA === -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Les Sisenes Aumentades",
+      "url": "https://www.lasextaaumentada.com/Imagenes/Les%20Sisenes%20Aumentades.html",
+      "description": "Recurs educatiu sobre les sisenes augmentades: Italiana, Francesa, Alemanya, Suïssa i Wagneriana.",
+      "inLanguage": "ca",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "La Sexta Aumentada",
+        "url": "https://www.lasextaaumentada.com/"
+      },
+      "educationalUse": "learning resource",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "music students and educators"
+      },
+      "about": {
+        "@type": "Thing",
+        "name": "Augmented sixth chords",
+        "description": "Music theory: augmented sixth chords including Italian, French, German, Swiss, and Wagnerian"
+      }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ========== SOUND PORT STYLES ========== */
+        .sound-port-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            padding: 60px 20px;
+            margin: 40px auto;
+            max-width: 900px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        .sound-port-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 50%, rgba(201,168,76,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .sound-port-title {
+            text-align: center;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2rem;
+            color: #c9a84c;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            position: relative;
+        }
+        .sound-port-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+        }
+        .sound-port-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 16px;
+            padding: 0 10px;
+            position: relative;
+        }
+        .sound-port-card {
+            background: rgba(255,255,255,0.06);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 20px 14px 18px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+        }
+        .sound-port-card:hover {
+            background: rgba(255,255,255,0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        }
+        .sound-port-card:active {
+            transform: translateY(-1px) scale(0.97);
+        }
+        .sound-port-card.playing {
+            border-color: #c9a84c;
+            box-shadow: 0 0 25px rgba(201,168,76,0.3), inset 0 0 25px rgba(201,168,76,0.05);
+            background: rgba(201,168,76,0.12);
+        }
+        .sound-port-card .port-icon {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+            display: block;
+            transition: transform 0.3s;
+        }
+        .sound-port-card.playing .port-icon {
+            animation: pulse-glow 1s ease-in-out infinite alternate;
+        }
+        @keyframes pulse-glow {
+            0% { transform: scale(1); filter: brightness(1); }
+            100% { transform: scale(1.1); filter: brightness(1.3); }
+        }
+        .sound-port-card .port-name {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .sound-port-card .port-badge {
+            font-size: 0.65rem;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.3px;
+            background: rgba(255,255,255,0.08);
+            padding: 2px 10px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+        .sound-port-card .port-wave {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+            margin-top: 10px;
+            height: 20px;
+        }
+        .sound-port-card.playing .port-wave {
+            display: flex;
+        }
+        .sound-port-card .port-wave span {
+            width: 3px;
+            background: #c9a84c;
+            border-radius: 3px;
+            animation: wave 0.8s ease-in-out infinite alternate;
+        }
+        .sound-port-card .port-wave span:nth-child(1) { height: 8px;  animation-delay: 0s; }
+        .sound-port-card .port-wave span:nth-child(2) { height: 14px; animation-delay: 0.15s; }
+        .sound-port-card .port-wave span:nth-child(3) { height: 6px;  animation-delay: 0.3s; }
+        .sound-port-card .port-wave span:nth-child(4) { height: 18px; animation-delay: 0.1s; }
+        .sound-port-card .port-wave span:nth-child(5) { height: 10px; animation-delay: 0.25s; }
+        @keyframes wave {
+            0% { opacity: 0.3; transform: scaleY(0.5); }
+            100% { opacity: 1; transform: scaleY(1); }
+        }
+
+        /* Sound Port: Stop All button */
+        .sound-port-stop {
+            display: block;
+            margin: 25px auto 0;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.7);
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+            font-family: inherit;
+        }
+        .sound-port-stop:hover {
+            background: rgba(255, 75, 75, 0.2);
+            border-color: rgba(255, 75, 75, 0.4);
+            color: #ff6b6b;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 600px) {
+            .sound-port-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .sound-port-section {
+                padding: 35px 12px;
+                margin: 25px 10px;
+                border-radius: 14px;
+            }
+            .sound-port-title { font-size: 1.5rem; }
+            .sound-port-card { padding: 16px 10px 14px; }
+        }
+    </style>
+
+</head>
+<body>
+
+  <!-- Audio de benvinguda: intenta sonar automàticament; si el navegador ho bloqueja, sona al primer clic -->
+  <audio id="welcomeAudio" preload="auto">
+    <source src="bos.wav" type="audio/wav">
+  </audio>
+  <script>
+    (function() {
+      var audio = document.getElementById('welcomeAudio');
+      if (!audio) return;
+
+      // Intentar reproduir automàticament
+      var playPromise = audio.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(function() {
+          // L'autoplay ha estat bloquejat pel navegador.
+          // Es reproduirà en el primer clic/toc a la pàgina.
+          var played = false;
+          function playOnInteraction() {
+            if (played) return;
+            played = true;
+            audio.play().catch(function(e) {
+              console.warn('No es pot reproduir bos.wav:', e);
+            });
+            document.removeEventListener('click', playOnInteraction);
+            document.removeEventListener('touchstart', playOnInteraction);
+          }
+          document.addEventListener('click', playOnInteraction);
+          document.addEventListener('touchstart', playOnInteraction);
+        });
+      }
+    })();
+  </script>
+  
+  <header>
+
+    <div class="images container"> 
+        <a href="#" class="logo">WEB DE LES SISENES AUMENTADES</a>
+        <input type="checkbox" id="menu">
+        <label for="menu" class="menu-icono-label">
+            <img class="menu-icono" src="menu.png" alt="Menú de navegació">
+        </label>
+        <nav class="navbar">
+          <ul>
+            <li><img src="Acorde aumentado.jpeg" alt="Acord augmentat"><a href="#card-interval">Interval de Sisena Aumentada</a></li>
+            <li><img src="Italia.png" alt="Bandera d'Itàlia"><a href="#card-italiana">Sisena Italiana</a></li>
+            <li><img src="Francesa.png" alt="Bandera de França"><a href="#card-francesa">Sisena Francesa</a></li>
+            <li><img src="Alemanya.png" alt="Bandera d'Alemanya"><a href="#card-alemanya">Sisena Alemanya</a></li>
+            <li><img src="suïssa.png" alt="Bandera de Suïssa"><a href="#card-suissa">Sisena Suïssa</a></li>
+            <li><img src="Wagner.png" alt="Retrat de Wagner"><a href="#card-wagneriana">Sisena Wagneriana</a></li>
+          </ul>
+        </nav>
+    </div>
+    <div class="header-content container">
+      <div class="header-txt">
+        <h1>LES SISENES AUMENTADES</h1>
+        <p>
+          Són acords alterats de funció predominant, caracteritzats per l'interval de sisena augmentada
+          que es forma entre el baix i la nota superior. La seua funció principal és resoldre cromàticament cap a la dominant. Els
+          cinc tipus existents són l'italiana, la francesa, l'alemany, la suïssa i la wagneriana.
+        </p>
+      </div>
+      <div class="header-img">
+        <img src="interval-sisena-aumentada.jpg" alt="Interval de Sisena Aumentada">
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ============================================================ -->
+  <!--        SOUND PORT – PUERTO DE AUDIO INTERACTIVO              -->
+  <!-- ============================================================ -->
+  <section class="sound-port-section" id="sound-port">
+    <h2 class="sound-port-title">🎛️ PUERTO DE SO</h2>
+    <p class="sound-port-subtitle">Selecciona una sisena per escoltar-la</p>
+
+    <div class="sound-port-grid" id="soundPortGrid">
+      <!-- Italiana -->
+      <div class="sound-port-card" data-audio="Sons Sisenes Aumentades/audio-italiana.wav" data-name="Italiana">
+        <span class="port-icon">🇮🇹</span>
+        <div class="port-name">Italiana</div>
+        <span class="port-badge">Triada</span>
+        <div class="port-wave"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+      <!-- Francesa -->
+      <div class="sound-port-card" data-audio="Sons Sisenes Aumentades/audio-francesa.wav" data-name="Francesa">
+        <span class="port-icon">🇫🇷</span>
+        <div class="port-name">Francesa</div>
+        <span class="port-badge">Quatriada</span>
+        <div class="port-wave"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+      <!-- Alemanya -->
+      <div class="sound-port-card" data-audio="Sons Sisenes Aumentades/audio-alemanya.wav" data-name="Alemanya">
+        <span class="port-icon">🇩🇪</span>
+        <div class="port-name">Alemanya</div>
+        <span class="port-badge">Quatriada</span>
+        <div class="port-wave"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+      <!-- Suïssa -->
+      <div class="sound-port-card" data-audio="Sons Sisenes Aumentades/audio-suissa.wav" data-name="Suïssa">
+        <span class="port-icon">🇨🇭</span>
+        <div class="port-name">Suïssa</div>
+        <span class="port-badge">Quatriada</span>
+        <div class="port-wave"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+      <!-- Wagneriana -->
+      <div class="sound-port-card" data-audio="Sons Sisenes Aumentades/audio-wagneriana.wav" data-name="Wagneriana">
+        <span class="port-icon">🎭</span>
+        <div class="port-name">Wagneriana</div>
+        <span class="port-badge">Quatriada</span>
+        <div class="port-wave"><span></span><span></span><span></span><span></span><span></span></div>
+      </div>
+    </div>
+
+    <button class="sound-port-stop" id="soundPortStop">⏹ ATURA TOTS</button>
+  </section>
+
+  <!-- SCRIPT DEL SOUND PORT -->
+  <script>
+    (function() {
+      var cards = document.querySelectorAll('.sound-port-card');
+      var stopBtn = document.getElementById('soundPortStop');
+      var currentAudio = null;
+      var currentCard = null;
+
+      function stopAll() {
+        if (currentAudio) {
+          currentAudio.pause();
+          currentAudio.currentTime = 0;
+          currentAudio = null;
+        }
+        if (currentCard) {
+          currentCard.classList.remove('playing');
+          currentCard = null;
+        }
+      }
+
+      function playAudio(card) {
+        var src = card.getAttribute('data-audio');
+        if (!src) return;
+
+        // Si ya está sonando la misma carta, la aturamos (toggle)
+        if (currentCard === card && currentAudio && !currentAudio.paused) {
+          stopAll();
+          return;
+        }
+
+        // Aturar el que estigués sonant
+        stopAll();
+
+        // Crear i reproduir nou audio
+        var audio = new Audio(src);
+        audio.volume = 0.6;
+        audio.addEventListener('ended', function() {
+          card.classList.remove('playing');
+          if (currentAudio === audio) currentAudio = null;
+          if (currentCard === card) currentCard = null;
+        });
+        audio.play().then(function() {
+          currentAudio = audio;
+          currentCard = card;
+          card.classList.add('playing');
+        }).catch(function(e) {
+          console.warn('No es pot reproduir:', e);
+        });
+      }
+
+      // Assignar clics a cada carta
+      cards.forEach(function(card) {
+        card.addEventListener('click', function() {
+          playAudio(card);
+        });
+      });
+
+      // Botó d'aturar
+      if (stopBtn) {
+        stopBtn.addEventListener('click', stopAll);
+      }
+    })();
+  </script>
+
+  <section class="information">
+    <h2>DIFERENTS NACIONALITATS</h2> 
+    <div class="crono-img">
+      <img src="ChatGPT Image 14 de jul. del 2026, 19_10_07.png" alt="Àrbbre cronològic de les sisenes augmentades">
+    </div>
+    <a href="#cards-section" class="btn-1">Les Sisenes</a>
+    <div class="header-img">
+      <img src="interval-sisena-aumentada.jpg" alt="Interval de Sisena Aumentada">
+    </div>
+  </section>
+  
+  <section class="information" id="cards-section">
+
+    <div class="information-content container">
+
+      <div class="information-box">
+        <div class="card-1" id="card-interval">
+          <h3>Interval de Sisena Aumentada</h3>
+          <img src="interval-sisena-aumentada.jpg" alt="Interval de sisena augmentada">
+          <span>6AUM</span>
+        </div>
+
+        <div class="card-1 card-italiana" id="card-italiana">
+          <h3>Sisena Italiana</h3>
+         <img src="sisena-italiana.jpg" alt="Sisena Italiana en el pentagrama">
+           <span>ACORD TRIADA</span>
+
+            <audio controls>
+              <source src="Sons Sisenes Aumentades/audio-italiana.wav" type="audio/wav">
+            </audio>
+
+           <div class="entrellat-section">
+             <h4>🎼 Entrellat de la Sisena Italiana</h4>
+             <p class="entrellat-desc">L'interval de <strong>sisena augmentada</strong> (Fa–Re♯) es resol per moviment cromàtic contrari cap a l'octava de la dominant (Mi–Mi). La tònica (Do) es pot mantenir com a nota comuna o resoldre a la quinta (Si).</p>
+             <img src="entrellat-italiana.svg" alt="Diagrama d'entrellat de la Sisena Italiana" class="entrellat-img">
+           </div>
+
+        </div>
+
+        <div class="card-1" id="card-francesa">
+          <h3>Sisena Francesa</h3>
+         <img src="sisena-francesa.jpg" alt="Sisena Francesa en el pentagrama">
+           <span>ACORD QUATRIADA</span>
+
+            <audio controls>
+              <source src="Sons Sisenes Aumentades/audio-francesa.wav" type="audio/wav">
+            </audio>
+
+           <div class="entrellat-section">
+             <h4>🎼 Entrellat de la Sisena Francesa</h4>
+             <p class="entrellat-desc">L'interval de <strong>sisena augmentada</strong> (Fa–Re♯) es resol per moviment cromàtic contrari cap a l'octava de la dominant (Mi–Mi). La tònica (La) descendeix un semitò cap a la sensible (Sol♯), mentre que el segon grau (Si) es manté com a nota comuna (7a del V).</p>
+             <img src="entrellat-francesa.svg" alt="Diagrama d'entrellat de la Sisena Francesa" class="entrellat-img">
+           </div>
+
+        </div>
+           
+            
+        <div class="card-1" id="card-alemanya">
+          <h3>Sisena Alemanya</h3>
+          <img src="sisena-alemanya.jpg" alt="Sisena Alemanya en el pentagrama">
+          <span>ACORD QUATRIADA</span>
+          
+            <audio controls>
+              <source src="Sons Sisenes Aumentades/audio-alemanya.wav" type="audio/wav">
+            </audio>
+
+           <div class="entrellat-section">
+             <h4>🎼 Entrellat de la Sisena Alemanya</h4>
+             <p class="entrellat-desc">L'interval de <strong>sisena augmentada</strong> (Fa–Re♯) es resol per moviment cromàtic contrari cap a l'octava de la dominant (Mi–Mi). Tant el baix (Fa) com el tercer grau baixat (Do) descendeixen un semitò, creant les anomenades <strong>quintes de Mozart</strong> (quintes paral·leles Fa–Do → Mi–Si).</p>
+             <img src="entrellat-alemanya.svg" alt="Diagrama d'entrellat de la Sisena Alemanya" class="entrellat-img">
+           </div>
+
+        </div>
+
+        <div class="card-1" id="card-suissa">
+          <h3>Sisena Suïssa</h3>
+         <img src="sisena-suissa.jpg" alt="Sisena Suïssa en el pentagrama">
+           <span>ACORD QUATRIADA</span>
+
+            <audio controls>
+              <source src="Sons Sisenes Aumentades/audio-suissa.wav" type="audio/wav">
+            </audio>
+
+           <div class="entrellat-section">
+             <h4>🎼 Entrellat de la Sisena Suïssa</h4>
+             <p class="entrellat-desc">L'interval de <strong>sisena augmentada</strong> (Fa–Re♯) es resol per moviment cromàtic contrari cap a l'octava de la dominant (Mi–Mi). El tret distintiu: el tercer grau és <strong>major (Do♯)</strong> en lloc de menor, evitant les quintes paral·leles de l'Alemanya i resolent per moviment contrari enharmònic (Do♯ → La / Sol♯).</p>
+             <img src="entrellat-suissa.svg" alt="Diagrama d'entrellat de la Sisena Suïssa" class="entrellat-img">
+           </div>
+
+        </div>
+
+
+        <div class="card-1" id="card-wagneriana">
+          <h3>Sisena Wagneriana</h3>
+          <img src="sisena-wagneriana.jpg" alt="Sisena Wagneriana en el pentagrama">
+          <span>ACORD QUATRIADA</span>
+
+            <audio controls>
+              <source src="Sons Sisenes Aumentades/audio-wagneriana.wav" type="audio/wav">
+            </audio>
+
+           <div class="entrellat-section">
+             <h4>🎼 Entrellat de la Sisena Wagneriana</h4>
+             <p class="entrellat-desc">L'interval de <strong>sisena augmentada</strong> (Fa–Re♯) es resol per moviment cromàtic contrari cap a l'octava de la dominant (Mi–Mi). Característicament afegeix la 7a menor (Sib) i la 9a disminuïda (Re♭), creant una tensió extrema que es resoldrà cap a un acord de V⁷ amb tensions.</p>
+             <img src="entrellat-wagneriana.svg" alt="Diagrama d'entrellat de la Sisena Wagneriana" class="entrellat-img">
+           </div>
+
+        </div>
+      
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="quiz-section">
+    <div class="container" style="text-align: center; padding: 60px 20px;">
+      <div style="max-width: 600px; margin: 0 auto;">
+        <div style="font-size: 3rem; margin-bottom: 15px;">🎵</div>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; color: #c9a84c; margin-bottom: 15px; letter-spacing: 1px;">Posa't a prova!</h2>
+        <p style="font-size: 1.05rem; color: #b0b0b0; margin-bottom: 30px; line-height: 1.6;">Fes el qüestionari interactiu i descobreix si domines les sisenes augmentades</p>
+        <a href="Qüestionari Interactiu de les Sisenes Aumentades/quiz.html" class="btn-1" style="display: inline-block; padding: 14px 40px; font-size: 1rem;">Començar Qüestionari →</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-logo">La Sexta Aumentada</div>
+    <p>Recurs educatiu de teoria musical sobre les sisenes augmentades.<br>Italiana · Francesa · Alemanya · Suïssa · Wagneriana</p>
+    <div class="footer-links">
+      <a href="#card-interval">Interval</a>
+      <a href="#card-italiana">Italiana</a>
+      <a href="#card-francesa">Francesa</a>
+      <a href="#card-alemanya">Alemanya</a>
+      <a href="#card-suissa">Suïssa</a>
+      <a href="#card-wagneriana">Wagneriana</a>
+      <a href="Qüestionari Interactiu de les Sisenes Aumentades/quiz.html">Qüestionari</a>
+    </div>
+  </footer>
+   
+</body>
+</html>
