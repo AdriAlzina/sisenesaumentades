@@ -1,0 +1,8 @@
+# robots.txt per a La Sexta Aumentada
+# Permet que Google i altres cercadors indexin tot el contingut
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.lasextaaumentada.com/sitemap.xml
