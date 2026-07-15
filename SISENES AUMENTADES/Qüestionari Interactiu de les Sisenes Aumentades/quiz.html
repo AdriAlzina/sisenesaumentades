@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- === SEO TAGS === -->
+    <title>Qüestionari Interactiu – Les Sisenes Aumentades | Teoria Musical</title>
+    <meta name="description" content="Posa't a prova amb el qüestionari interactiu sobre les sisenes augmentades: Italiana, Francesa, Alemanya, Suïssa i Wagneriana. 10 preguntes d'harmonia.">
+    <meta name="keywords" content="qüestionari sisenes augmentades, quiz teoria musical, sisena italiana, sisena francesa, sisena alemanya, harmonia, acords alterats">
+    <meta name="author" content="La Sexta Aumentada">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="ca">
+    <link rel="canonical" href="https://www.lasextaaumentada.com/Imagenes/Q%C3%BCestionari%20Interactiu%20de%20les%20Sisenes%20Aumentades/quiz.html">
+
+    <!-- === OPEN GRAPH === -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Qüestionari Interactiu – Les Sisenes Aumentades">
+    <meta property="og:description" content="Posa't a prova amb el qüestionari interactiu sobre les sisenes augmentades: Italiana, Francesa, Alemanya, Suïssa i Wagneriana.">
+    <meta property="og:url" content="https://www.lasextaaumentada.com/Imagenes/Q%C3%BCestionari%20Interactiu%20de%20les%20Sisenes%20Aumentades/quiz.html">
+    <meta property="og:image" content="https://www.lasextaaumentada.com/Imagenes/interval-sisena-aumentada.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ca_ES">
+    <meta property="og:site_name" content="La Sexta Aumentada">
+
+    <!-- === TWITTER CARDS === -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Qüestionari Interactiu – Les Sisenes Aumentades">
+    <meta name="twitter:description" content="Posa't a prova amb el qüestionari interactiu sobre les sisenes augmentades.">
+    <meta name="twitter:image" content="https://www.lasextaaumentada.com/Imagenes/interval-sisena-aumentada.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            background-image: url('../background-pentagram.svg');
+            background-repeat: repeat;
+            background-size: 400px 400px;
+            background-attachment: fixed;
+            color: #1a1a1a;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+        }
+
+        .quiz-wrapper {
+            width: 100%;
+            max-width: 720px;
+        }
+
+        .quiz-container {
+            background: #ffffff;
+            border: 3px solid #2c2c2c;
+            border-radius: 20px;
+            padding: 45px 40px;
+            box-shadow: 10px 10px 0 #2c2c2c;
+        }
+
+        .quiz-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 3px solid #2c2c2c;
+        }
+
+        .quiz-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #8b6914;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .quiz-header .subtitle {
+            color: #666666;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        /* Progress bar */
+        .progress-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .progress-track {
+            flex: 1;
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid #2c2c2c;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: #8b6914;
+            border-radius: 4px;
+            transition: width 0.4s ease;
+        }
+
+        .progress-counter {
+            font-size: 0.85rem;
+            color: #555555;
+            font-weight: 600;
+            min-width: 60px;
+            text-align: right;
+        }
+
+        /* Question */
+        .question-card {
+            background: #f9f6f0;
+            border: 2px solid #2c2c2c;
+            border-radius: 14px;
+            padding: 25px;
+            margin-bottom: 25px;
+        }
+
+        .question-number {
+            font-size: 0.8rem;
+            color: #8b6914;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .question-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            line-height: 1.5;
+        }
+
+        /* Options */
+        .options-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .option-item {
+            background: #ffffff;
+            border: 2px solid #cccccc;
+            border-radius: 12px;
+            padding: 16px 20px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: #333333;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.08);
+        }
+
+        .option-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 4px;
+            height: 100%;
+            background: transparent;
+            transition: background 0.25s ease;
+        }
+
+        .option-item:hover:not(.disabled) {
+            border-color: #8b6914;
+            background: #fdf9f0;
+            color: #1a1a1a;
+            transform: translateX(4px);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.08);
+        }
+
+        .option-item:hover:not(.disabled)::before {
+            background: #8b6914;
+        }
+
+        .option-item.correct {
+            border-color: #2e7d32;
+            background: #e8f5e9;
+            color: #1b5e20;
+        }
+
+        .option-item.correct::before {
+            background: #2e7d32;
+        }
+
+        .option-item.incorrect {
+            border-color: #c62828;
+            background: #ffebee;
+            color: #b71c1c;
+        }
+
+        .option-item.incorrect::before {
+            background: #c62828;
+        }
+
+        .option-item.disabled {
+            cursor: default;
+            opacity: 0.7;
+        }
+
+        .option-item .option-letter {
+            display: inline-block;
+            width: 26px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            background: #f0e4c0;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #5a4408;
+            margin-right: 12px;
+            border: 1px solid #8b6914;
+        }
+
+        .option-item.correct .option-letter {
+            background: #c8e6c9;
+            border-color: #2e7d32;
+            color: #1b5e20;
+        }
+
+        .option-item.incorrect .option-letter {
+            background: #ffcdd2;
+            border-color: #c62828;
+            color: #b71c1c;
+        }
+
+        /* Feedback */
+        .feedback-box {
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: none;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            border-left: 5px solid transparent;
+            animation: fadeSlideIn 0.3s ease;
+        }
+
+        @keyframes fadeSlideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .feedback-box.correct {
+            display: block;
+            background: #e8f5e9;
+            border-left-color: #2e7d32;
+            color: #1b5e20;
+            border: 2px solid #2e7d32;
+        }
+
+        .feedback-box.incorrect {
+            display: block;
+            background: #ffebee;
+            border-left-color: #c62828;
+            color: #b71c1c;
+            border: 2px solid #c62828;
+        }
+
+        .feedback-box .fb-label {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+
+        .feedback-box.correct .fb-label { color: #2e7d32; }
+        .feedback-box.incorrect .fb-label { color: #c62828; }
+
+        /* Button */
+        .action-btn {
+            display: none;
+            width: 100%;
+            padding: 16px;
+            background: #8b6914;
+            color: #ffffff;
+            border: 2px solid #2c2c2c;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 4px 4px 0 #2c2c2c;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 6px 6px 0 #2c2c2c;
+        }
+
+        /* Result screen */
+        #result-screen {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+            animation: fadeSlideIn 0.4s ease;
+        }
+
+        .result-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+
+        #result-screen h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #8b6914;
+            margin-bottom: 10px;
+        }
+
+        #result-screen p {
+            color: #666666;
+            font-size: 1rem;
+        }
+
+        .score-box {
+            display: inline-block;
+            margin: 25px auto;
+            padding: 20px 50px;
+            background: #f9f6f0;
+            border: 2px solid #2c2c2c;
+            border-radius: 14px;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.1);
+        }
+
+        .score-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            color: #8b6914;
+            font-weight: 700;
+        }
+
+        #score-comment {
+            color: #555555;
+            font-size: 1rem;
+            max-width: 450px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        .result-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .result-actions .action-btn {
+            display: inline-block;
+            width: auto;
+            min-width: 200px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #555555;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 14px 28px;
+            border: 2px solid #2c2c2c;
+            border-radius: 12px;
+            transition: all 0.25s ease;
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.08);
+        }
+
+        .back-link:hover {
+            color: #8b6914;
+            border-color: #8b6914;
+            background: #fdf9f0;
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.08);
+        }
+
+        @media (max-width: 600px) {
+            .quiz-container { padding: 25px 20px; }
+            .quiz-header h1 { font-size: 1.5rem; }
+            .question-text { font-size: 1.1rem; }
+            .score-num { font-size: 2.5rem; }
+            .result-actions { flex-direction: column; align-items: center; }
+            .result-actions .action-btn { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="quiz-wrapper">
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>🎵 Qüestionari</h1>
+            <p class="subtitle">Sisenes Aumentades</p>
+        </div>
+
+        <div class="progress-wrapper">
+            <div class="progress-track">
+                <div class="progress-fill" id="progress"></div>
+            </div>
+            <span class="progress-counter" id="progress-counter">1 / 5</span>
+        </div>
+
+        <div id="quiz-screen">
+            <div class="question-card">
+                <div class="question-number" id="question-num">PREGUNTA 1</div>
+                <div class="question-text" id="question">Carregant...</div>
+            </div>
+
+            <ul class="options-list" id="options"></ul>
+
+            <div class="feedback-box" id="feedback">
+                <div class="fb-label" id="fb-label"></div>
+                <div id="fb-text"></div>
+            </div>
+
+            <button class="action-btn" id="action-btn">Següent pregunta</button>
+        </div>
+
+        <div id="result-screen">
+            <div class="result-icon" id="result-icon">🏆</div>
+            <h2>Qüestionari completat!</h2>
+            <p>La teva puntuació</p>
+            <div class="score-box">
+                <div class="score-num" id="final-score">0 / 5</div>
+            </div>
+            <p id="score-comment"></p>
+            <div class="result-actions">
+                <button class="action-btn" onclick="resetQuiz()">Torna a provar</button>
+                <a class="back-link" href="../Index.html">← Tornar a la web</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const questions = [
+        {
+            question: "Quines notes formen l'interval de sisena augmentada característic en la tonalitat de La menor (Am)?",
+            options: [
+                "Fa i Re sostingut",
+                "Fa i Re",
+                "Fa sostingut i Re sostingut",
+                "Sib i Sol"
+            ],
+            correct: 0,
+            explanation: "En La menor, la sisena augmentada es construeix sobre el 6è grau baixat (Fa) i el 4t grau elevat (Re sostingut). La resolució natural d'aquest interval és obrir-se cap a l'octava de la dominant (Mi - Mi)."
+        },
+        {
+            question: "Com es diferencia l'acord de Sisena Francesa de la Sisena Italiana?",
+            options: [
+                "La Francesa conté la tònica duplicada.",
+                "La Francesa afegeix el segon grau a l'estructura bàsica.",
+                "La Francesa afegeix la tercera menor a sobre de la tònica.",
+                "La Francesa no es resol en la dominant."
+            ],
+            correct: 1,
+            explanation: "Mentre que la Sisena Italiana té només 3 notes (6è grau baixat, 1r grau duplicat, 4t grau elevat), la Francesa n'afegeix una quarta: el 2n grau de l'escala. Això crea una sonoritat característica amb una quarta augmentada a l'interior de l'acord."
+        },
+        {
+            question: "Per què s'ha de tenir especial precaució en resoldre directament una Sisena Alemanya cap a l'acord de Dominant (V)?",
+            options: [
+                "Perquè es creen quintes paral·leles (les anomenades 'quintes de Mozart').",
+                "Perquè és impossible de cantar en música coral.",
+                "Perquè destrueix l'efecte de la tònica.",
+                "Perquè s'obté una quarta disminuïda prohibida."
+            ],
+            correct: 0,
+            explanation: "En passar directament de la Sisena Alemanya al V, la quinta justa paral·lela entre el baix (6è grau baixat) i el 3r grau baixat es mou cap a la quinta del V. Tot i que s'anomenen 'quintes de Mozart' perquè ell les feia servir sovint, molts teòrics clàssics les evitaven resolent primer cap a un acord de quarta i sisena cadencial (I 6/4)."
+        },
+        {
+            question: "Quina estructura intervàl·lica (des del baix) defineix millor la Sisena Alemanya?",
+            options: [
+                "Tercera major, quarta augmentada, sisena augmentada",
+                "Tercera menor, quinta justa, sisena augmentada",
+                "Tercera major, quinta justa, sisena augmentada",
+                "Tercera menor, quarta augmentada, sisena augmentada"
+            ],
+            correct: 2,
+            explanation: "Des de la nota del baix (6è grau baixat), la Sisena Alemanya es construeix amb una tercera major (la tònica), una quinta justa (el 3r grau baixat) i una sisena augmentada (el 4t grau elevat)."
+        },
+        {
+            question: "En una tonalitat Major, què li passa al 3r grau quan construïm la Sisena Alemanya?",
+            options: [
+                "Es manté natural.",
+                "S'ha d'abaixar un semitò (esdevé un 3r grau baixat).",
+                "S'ha d'apujar un semitò.",
+                "S'elimina completament de l'acord."
+            ],
+            correct: 1,
+            explanation: "Per mantenir l'estructura de l'acord d'Alemanya en una tonalitat Major (que requereix una quinta justa des del baix), s'ha d'abaixar el tercer grau de l'escala un semitò per correspondre's amb l'homòloga menor."
+        }
+    ];
+
+    const letters = ['A', 'B', 'C', 'D'];
+
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let answered = false;
+
+    // DOM refs
+    const questionEl = document.getElementById('question');
+    const questionNumEl = document.getElementById('question-num');
+    const optionsContainer = document.getElementById('options');
+    const feedbackEl = document.getElementById('feedback');
+    const fbLabel = document.getElementById('fb-label');
+    const fbText = document.getElementById('fb-text');
+    const actionBtn = document.getElementById('action-btn');
+    const progressFill = document.getElementById('progress');
+    const progressCounter = document.getElementById('progress-counter');
+    const quizScreen = document.getElementById('quiz-screen');
+    const resultScreen = document.getElementById('result-screen');
+    const finalScoreEl = document.getElementById('final-score');
+    const scoreCommentEl = document.getElementById('score-comment');
+    const resultIcon = document.getElementById('result-icon');
+
+    function loadQuestion() {
+        answered = false;
+        feedbackEl.className = 'feedback-box';
+        feedbackEl.style.display = 'none';
+        actionBtn.style.display = 'none';
+
+        const q = questions[currentQuestionIndex];
+        questionNumEl.textContent = `PREGUNTA ${currentQuestionIndex + 1}`;
+        questionEl.textContent = q.question;
+
+        // Progress
+        const pct = ((currentQuestionIndex) / questions.length) * 100;
+        progressFill.style.width = `${pct}%`;
+        progressCounter.textContent = `${currentQuestionIndex + 1} / ${questions.length}`;
+
+        optionsContainer.innerHTML = '';
+        q.options.forEach((opt, i) => {
+            const li = document.createElement('li');
+            li.className = 'option-item';
+            li.innerHTML = `<span class="option-letter">${letters[i]}</span>${opt}`;
+            li.addEventListener('click', () => selectOption(i));
+            optionsContainer.appendChild(li);
+        });
+    }
+
+    function selectOption(idx) {
+        if (answered) return;
+        answered = true;
+
+        const q = questions[currentQuestionIndex];
+        const items = optionsContainer.querySelectorAll('.option-item');
+
+        items.forEach((item, i) => {
+            item.classList.add('disabled');
+            if (i === q.correct) item.classList.add('correct');
+        });
+
+        const isCorrect = idx === q.correct;
+        if (isCorrect) {
+            score++;
+        } else {
+            items[idx].classList.add('incorrect');
+        }
+
+        fbLabel.textContent = isCorrect ? '✅ Correcte' : '❌ Incorrecte';
+        fbText.textContent = q.explanation;
+        feedbackEl.className = `feedback-box ${isCorrect ? 'correct' : 'incorrect'}`;
+
+        actionBtn.style.display = 'block';
+        actionBtn.textContent = currentQuestionIndex === questions.length - 1
+            ? 'Veure resultats'
+            : 'Següent pregunta →';
+    }
+
+    actionBtn.addEventListener('click', () => {
+        if (currentQuestionIndex < questions.length - 1) {
+            currentQuestionIndex++;
+            loadQuestion();
+        } else {
+            showResults();
+        }
+    });
+
+    function showResults() {
+        progressFill.style.width = '100%';
+        progressCounter.textContent = `${questions.length} / ${questions.length}`;
+        quizScreen.style.display = 'none';
+        resultScreen.style.display = 'block';
+
+        finalScoreEl.textContent = `${score} / ${questions.length}`;
+
+        const pct = (score / questions.length) * 100;
+        let icon, comment;
+        if (pct === 100) {
+            icon = '🏆';
+            comment = 'Perfecte! Domines absolutament les sisenes aumentades. Ets al nivell d\'un teòric de l\'harmonia!';
+        } else if (pct >= 70) {
+            icon = '🌟';
+            comment = 'Molt bé! Tens una base harmònica excel·lent, només et cal polir algun detall.';
+        } else if (pct >= 50) {
+            icon = '📖';
+            comment = 'No està malament, però vigila les diferències subtils entre els diferents tipus de sisenes.';
+        } else {
+            icon = '🎯';
+            comment = 'Toca repassar! Les sisenes aumentades són complexes, torna a estudiar la teoria i intenta-ho de nou.';
+        }
+        resultIcon.textContent = icon;
+        scoreCommentEl.textContent = comment;
+    }
+
+    function resetQuiz() {
+        currentQuestionIndex = 0;
+        score = 0;
+        resultScreen.style.display = 'none';
+        quizScreen.style.display = 'block';
+        loadQuestion();
+    }
+
+    loadQuestion();
+</script>
+
+</body>
+</html>
